@@ -11,11 +11,8 @@ services:
 
   web:
     build: ./server
-    environment:
-      DB_SCHEMA: postgres
-      DB_USER: postgres
-      DB_PASSWORD: postgres
-      DB_HOST: db 
+    env_file:
+      - ./server/.env
     depends_on:
       - db 
     ports:
