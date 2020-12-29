@@ -3,9 +3,10 @@ module.exports = (sequelize, DataTypes) => {
     "stock",
     {
       symbol: DataTypes.STRING,
-      companyName: DataTypes.STRING,
+      name: DataTypes.STRING,
       sector: DataTypes.STRING,
       industry: DataTypes.STRING,
+      description: DataTypes.TEXT 
     },
     {}
   );
