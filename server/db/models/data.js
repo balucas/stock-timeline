@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Data = sequelize.define(
-    "Data",
+    "data",
     {
       open: DataTypes.DECIMAL,
       close: DataTypes.DECIMAL,
@@ -12,10 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Data.associate = (models) => {
-    Data.belongsTo(models.Stock, {
-      foreignKey: "stockId",
-      onDelete: "CASCADE",
-    });
+    Data.belongsTo(models.stock);
   };
 
   return Data;

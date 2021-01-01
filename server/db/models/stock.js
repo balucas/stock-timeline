@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
+  
+  Stock.associate = (models) => {
+    Stock.hasMany(models.data);
+  }
 
   return Stock;
 };

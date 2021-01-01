@@ -17,8 +17,16 @@ const stockModel = require("./stock");
 const dataModel = require("./data");
 const db = {};
 
+//define models 
 db.stock = stockModel(sequelize, Sequelize.DataTypes);
 db.data = dataModel(sequelize, Sequelize.DataTypes);
+
+//associate models
+Object.keys(db).forEach( (model) => {
+  if(db[model].associate){
+    db[model].associate(db);  
+  }
+});
 
 db.testConnection = async (seq) => {
   try {
