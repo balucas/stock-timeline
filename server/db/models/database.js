@@ -15,11 +15,13 @@ const sequelize = new Sequelize(
 
 const stockModel = require("./stock");
 const dataModel = require("./data");
+const newsModel = require("./news");
 const db = {};
 
 //define models 
 db.stock = stockModel(sequelize, Sequelize.DataTypes);
 db.data = dataModel(sequelize, Sequelize.DataTypes);
+db.news = newsModel(sequelize, Sequelize.DataTypes);
 
 //associate models
 Object.keys(db).forEach( (model) => {

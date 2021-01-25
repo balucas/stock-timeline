@@ -2,7 +2,11 @@ module.exports = (sequelize, DataTypes) => {
   const Stock = sequelize.define(
     "stock",
     {
-      symbol: DataTypes.STRING,
+      symbol: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+      },
       name: DataTypes.STRING,
       sector: DataTypes.STRING,
       industry: DataTypes.STRING,
